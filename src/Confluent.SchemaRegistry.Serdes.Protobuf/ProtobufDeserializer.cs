@@ -61,7 +61,6 @@ namespace Confluent.SchemaRegistry.Serdes
         public ProtobufDeserializer(IEnumerable<KeyValuePair<string, string>> config = null)
         {
             this.parser = new MessageParser<T>(() => new T());
-
             if (config == null) { return; }
 
             var nonProtobufConfig = config.Where(item => !item.Key.StartsWith("protobuf."));

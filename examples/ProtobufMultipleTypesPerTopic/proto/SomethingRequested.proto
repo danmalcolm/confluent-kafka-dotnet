@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package confluent.kafka.examples.protobufMultipleTypesPerTopic;
+
+message SomethingRequested {
+	string Id = 1;
+    string RequestMessage = 2;
+    string RequestDate = 3;
+}

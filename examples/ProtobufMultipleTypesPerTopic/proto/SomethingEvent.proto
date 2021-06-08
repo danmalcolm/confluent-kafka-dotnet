@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package confluent.kafka.examples.protobufMultipleTypesPerTopic;
+
+import "SomethingRequested.proto";
+import "SomethingStarted.proto";
+import "SomethingEnded.proto";
+
+message SomethingEvent {
+    oneof oneof_type {
+	    SomethingRequested requested = 1;
+	    SomethingStarted started = 2;
+	    SomethingEnded ended = 3;
+    }
+}
